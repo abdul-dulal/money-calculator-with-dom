@@ -5,81 +5,60 @@ function incomeInput() {
   return incomeTotal;
 }
 
-function allCostValue() {
-  const foodInput = document.getElementById("food");
+function expenseInput(expenseId) {
+  const foodInput = document.getElementById(expenseId);
   const foodInputText = foodInput.value;
-  const rentInput = document.getElementById("rent");
-  const rentInputText = rentInput.value;
-  const clothInput = document.getElementById("cloth");
-  const clothInputText = clothInput.value;
-
-  const totalCost =
-    parseFloat(foodInputText) +
-    parseFloat(rentInputText) +
-    parseFloat(clothInputText);
+  const fooodTotal = parseFloat(foodInputText);
+  return fooodTotal;
+}
+function allCostValue() {
+  const fooodTotal = expenseInput("food");
+  const rentTotal = expenseInput("rent");
+  const clothTotal = expenseInput("cloth");
+  const totalCost = fooodTotal + rentTotal + clothTotal;
   return totalCost;
 }
 function balanceCalculate() {
   const incomeTotal = incomeInput();
   const totalCost = allCostValue();
-  if (incomeTotal > 0 && totalCost > 0) {
-    const balance = document.getElementById("balance");
-    const balanceTotal = incomeTotal - totalCost;
-    balance.innerText = balanceTotal;
-    return balanceTotal;
-  }
+  const balance = document.getElementById("balance");
+  const balanceTotal = incomeTotal - totalCost;
+  balance.innerText = balanceTotal;
+  return balanceTotal;
 }
 
 document.getElementById("calculate").addEventListener("click", function () {
-  //   const incomeInput = document.getElementById("income");
-  //   const incomeText = incomeInput.value;
-  //   const incomeTotal = parseFloat(incomeText);
+  const totalCost = allCostValue();
   const incomeTotal = incomeInput();
 
-  //Expense
-  //   const foodInput = document.getElementById("food");
-  //   const foodInputText = foodInput.value;
-  //   const rentInput = document.getElementById("rent");
-  //   const rentInputText = rentInput.value;
-  //   const clothInput = document.getElementById("cloth");
-  //   const clothInputText = clothInput.value;
-  //   const totalCost =
-  //     parseFloat(foodInputText) +
-  //     parseFloat(rentInputText) +
-  //     parseFloat(clothInputText);
-  const totalCost = allCostValue();
   // set Total Expense
-  const totalExpense = document.getElementById("total-expense");
-  totalExpense.innerText = totalCost;
-  // total balance without Expense
-  //   const balance = document.getElementById("balance");
-  //   const balanceTotal = incomeTotal - totalCost;
-  //   balance.innerText = balanceTotal;
-  balanceCalculate();
+  if (totalCost > 0) {
+    const totalExpense = document.getElementById("total-expense");
+    totalExpense.innerText = totalCost;
+    balanceCalculate();
+  } else {
+    const falid = document.getElementById("notify-falid");
+    falid.style.display = "block";
+  }
 });
 
 document.getElementById("save-button").addEventListener("click", function () {
-  //   const incomeInput = document.getElementById("income");
-  //   const incomeText = incomeInput.value;
-  //   const incomeTotal = parseFloat(incomeText);
-
   const incomeTotal = incomeInput();
 
-  const balanceTotal = balanceCalculate();
-  //   const balance = document.getElementById("balance");
-  //   const balanceTotal = incomeTotal - totalCost;
-  //   balance.innerText = balanceTotal;
-  // save input
-  const saveInput = document.getElementById("save-input");
-  const saveInputText = saveInput.value;
-  const save = parseFloat(saveInputText);
+  if (incomeTotal > 0) {
+    const balanceTotal = balanceCalculate();
+    // save input
+    const saveInput = document.getElementById("save-input");
+    const saveInputText = saveInput.value;
+    const save = parseFloat(saveInputText);
 
-  //saving amaount
-  const savingAmaount = document.getElementById("saving-amaount");
-  const savingAmaountTotal = (incomeTotal * save) / 100;
-  savingAmaount.innerText = savingAmaountTotal;
+    //saving amaount
+    const savingAmaount = document.getElementById("saving-amaount");
+    const savingAmaountTotal = (incomeTotal * save) / 100;
+    savingAmaount.innerText = savingAmaountTotal;
 
-  // remaining balance
-  const remaining = document.getElementById("remaining");
-  remaining.innerText = balanceTotal - savingAmaountTotal;
+    // remaining balance
+    const remaining = document.getElementById("remaining");
+    remaining.innerText = balanceTotal - savingAmaountTotal;
+  }
 });

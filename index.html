@@ -5,24 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Money Calculator</title>
+    <!-- style-link -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <!-- main section -->
     <section>
       <div class="container">
         <h1 class="text-center my-5">Money Calculator</h1>
         <div class="row">
           <div class="col-sm-12 col-md-6 col-lg-6">
-            <img src="img/money.png" class="img-fluid" alt="" />
+            <img
+              src="img/money.png"
+              class="h-100 w-100 border-rounded"
+              alt=""
+            />
           </div>
           <div class="col-sm-12 col-md-6 col-lg-6 text-center bg">
             <h4>Income</h4>
-            <p>Income : <input type="text" id="income" /></p>
+            <p>Income : <input type="text" id="income" class="me-3" /></p>
             <h4>Expence</h4>
             <p>Food : <input type="text" id="food" /></p>
             <p>Rent : <input type="text" id="rent" /></p>
-            <p>Cloths : <input type="text" id="cloth" /></p>
+            <p>Cloths : <input type="text" id="cloth" class="me-3" /></p>
+            <p id="notify-falid" class="notify">
+              worng!😔😔😔. Plese Enter Number👍👍
+            </p>
             <button class="my-3 calculate" id="calculate">Calculate</button>
             <h4>Total Expence : <span id="total-expense"></span></h4>
             <h4>Balance :<span id="balance"></span></h4>
@@ -37,7 +46,7 @@
           </div>
         </div>
         <p id="notify-falid" class="notify">
-          ❌ Pin Didn't Match, Please try again
+          worng!😔😔😔. Plese Enter Number👍👍
         </p>
       </div>
     </section>

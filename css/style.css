@@ -6,6 +6,7 @@ body {
 }
 .bg {
   background-color: #f8f8f8;
+  border-radius: 10px;
 }
 .calculate {
   height: 51px;
@@ -30,6 +31,8 @@ input[type="text"] {
   padding: 6px;
 }
 .notify {
+  height: 50px;
+  width: 400px;
   color: #fff;
   text-align: center;
   margin: 0 auto;
