@@ -5,11 +5,12 @@ function incomeInput() {
   return incomeTotal;
 }
 
+// all expense input value here
 function expenseInput(expenseId) {
-  const foodInput = document.getElementById(expenseId);
-  const foodInputText = foodInput.value;
-  const fooodTotal = parseFloat(foodInputText);
-  return fooodTotal;
+  const expenseInputField = document.getElementById(expenseId);
+  const expenseInputFieldText = expenseInputField.value;
+  const expenseInputTotal = parseFloat(expenseInputFieldText);
+  return expenseInputTotal;
 }
 function allCostValue() {
   const fooodTotal = expenseInput("food");
@@ -18,6 +19,8 @@ function allCostValue() {
   const totalCost = fooodTotal + rentTotal + clothTotal;
   return totalCost;
 }
+
+// total balance calculate
 function balanceCalculate() {
   const incomeTotal = incomeInput();
   const totalCost = allCostValue();
@@ -37,7 +40,8 @@ document.getElementById("calculate").addEventListener("click", function () {
     totalExpense.innerText = totalCost;
     balanceCalculate();
   } else {
-    const falid = document.getElementById("notify-falid");
+    // error message show
+    const falid = document.getElementById("error");
     falid.style.display = "block";
   }
 });
@@ -60,5 +64,7 @@ document.getElementById("save-button").addEventListener("click", function () {
     // remaining balance
     const remaining = document.getElementById("remaining");
     remaining.innerText = balanceTotal - savingAmaountTotal;
+  } else {
+    document.getElementById("save-error").style.display = "block ";
   }
 });

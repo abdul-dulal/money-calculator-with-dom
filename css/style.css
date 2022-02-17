@@ -4,6 +4,7 @@ body {
   margin: 0;
   font-family: "Roboto", sans-serif;
 }
+/* backgroun */
 .bg {
   background-color: #f8f8f8;
   border-radius: 10px;
@@ -30,7 +31,7 @@ input[type="text"] {
   border: none;
   padding: 6px;
 }
-.notify {
+.errorText {
   height: 50px;
   width: 400px;
   color: #fff;
