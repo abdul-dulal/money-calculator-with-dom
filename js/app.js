@@ -32,7 +32,7 @@ document.getElementById("calculate").addEventListener("click", function () {
   const incomeTotal = incomeInput();
 
   // set Total Expense
-  if (totalCost > 0) {
+  if (totalCost > 0 && totalCost < incomeTotal) {
     const totalExpense = document.getElementById("total-expense");
     totalExpense.innerText = totalCost;
     balanceCalculate();
