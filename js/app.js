@@ -12,6 +12,12 @@ function expenseInput(expenseId) {
   const expenseInputTotal = parseFloat(expenseInputFieldText);
   return expenseInputTotal;
 }
+document.getElementById("income").addEventListener("keyup", function (e) {
+  const result = e.target.value;
+  console.log(result);
+});
+
+// Total Expence
 function allCostValue() {
   const fooodTotal = expenseInput("food");
   const rentTotal = expenseInput("rent");
