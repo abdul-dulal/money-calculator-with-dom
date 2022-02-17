@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+.bg {
+  background-color: #f8f8f8;
+}
+.calculate {
+  height: 51px;
+  width: 199px;
+  font-size: 20px;
+  border: none;
+  color: white;
+  background-color: #59a5ff;
+}
+
+.save {
+  height: 44px;
+  border: none;
+  color: white;
+  background-color: #59a5ff;
+  width: 173px;
+  border-radius: 2px;
+}
+input[type="text"] {
+  background: #dcdcdc;
+  border: none;
+  padding: 6px;
+}
+.notify {
+  color: #fff;
+  text-align: center;
+  margin: 0 auto;
+  background: #222436;
+  margin-top: 20px;
+  border-radius: 15px;
+  padding: 5px 20px;
+  display: none;
+}
